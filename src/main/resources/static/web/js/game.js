@@ -116,6 +116,8 @@ function refreshGameView(_url) {
                 makeGameRecordTable(gamePlayerData.hits.self, "gameRecordSelfTable");
                 $('#battleGrids').show('puff', 'slow');
                 $('#gameRecordBlock').show('puff', 'slow');
+                 var msg = "PERDISTE FLACOOOOO";
+                        displayOverlay(msg);
                 console.log("OH YOU LOST");
             }
             if (gamePlayerData.gameState === "WAIT"){

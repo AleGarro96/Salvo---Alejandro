@@ -60,6 +60,7 @@ $('.login-form').on('submit', function (event) {
                         $("#newPassword").val("");
                          closeMyModal();
                         updateJson();
+                        $("#createGameForm").show();
 
                     })
                     .fail(function() {
