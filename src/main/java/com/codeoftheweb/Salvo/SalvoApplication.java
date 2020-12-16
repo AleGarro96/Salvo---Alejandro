@@ -39,8 +39,10 @@ public class SalvoApplication {
 	{
 		return (args) ->
 		{
+			//playerRepository.save(new Player("Alejandro Garro","alejandro@gmail.com",passwordEncoder().encode("123")));
 
-			/*playerRepository.save(new Player("Jack Bauer","j.bauer@ctu.gov",passwordEncoder().encode("123")));
+
+			playerRepository.save(new Player("Jack Bauer","j.bauer@ctu.gov",passwordEncoder().encode("123")));
 			playerRepository.save(new Player( "Chloe O'Brian","c.obrian@ctu.gov",passwordEncoder().encode("1234")));
 			playerRepository.save(new Player("Kim Bauer","kim_bauer@gmail.com",passwordEncoder().encode("12345")));
 			playerRepository.save(new Player( "Tony Almeidar","t.almeida@ctu.gov",passwordEncoder().encode("123456")));
@@ -48,7 +50,7 @@ public class SalvoApplication {
 			//Game 1
 			gameRepository.save(new Game(LocalDateTime.now()));
 			//Game 2
-			gameRepository.save(new Game(LocalDateTime.now().plusHours(1)));
+			//gameRepository.save(new Game(LocalDateTime.now().plusHours(1)));
 			//Game 3
 			//gameRepository.save(new Game(LocalDateTime.now().plusHours(2)));
 
@@ -57,16 +59,16 @@ public class SalvoApplication {
 			gamePlayerRepository.save(new GamePlayer(gameRepository.findById(1L).get(),playerRepository.findById(2L).get()));
 
 			//GamePlayer 2
-			gamePlayerRepository.save(new GamePlayer(gameRepository.findById(2L).get(),playerRepository.findById(3L).get()));
+		//	gamePlayerRepository.save(new GamePlayer(gameRepository.findById(2L).get(),playerRepository.findById(3L).get()));
 			//gamePlayerRepository.save(new GamePlayer(gameRepository.findById(2L).get(),playerRepository.findById(4L).get()));
 
 			//GamePlayer 3
 			/*gamePlayerRepository.save(new GamePlayer(gameRepository.findById(3L).get(),playerRepository.findById(1L).get()));
 			gamePlayerRepository.save(new GamePlayer(gameRepository.findById(3L).get(),playerRepository.findById(3L).get()));*/
-/*
+
 
 			//Ships gamePlayer 1
-			shipRepository.save(new Ship("carrier", List.of("H1","H2","H3","H4","H5"),gamePlayerRepository.findById(1L).get()));
+			/*shipRepository.save(new Ship("carrier", List.of("H1","H2","H3","H4","H5"),gamePlayerRepository.findById(1L).get()));
 			shipRepository.save(new Ship("battleship", List.of("J1","J2","J3","J4"),gamePlayerRepository.findById(1L).get()));
 			shipRepository.save(new Ship("submarine", List.of("C6","D6","E6"),gamePlayerRepository.findById(1L).get()));
 			shipRepository.save(new Ship("destroyer", List.of("F1","F2","F3"),gamePlayerRepository.findById(1L).get()));
@@ -87,14 +89,25 @@ public class SalvoApplication {
 			shipRepository.save(new Ship("PatrolBoat", List.of("E1","E2"),gamePlayerRepository.findById(3L).get()));*/
 
 
-			/*salvoRepository.save(new Salvo(1L,List.of("B1","B2","B3","F1"),gamePlayerRepository.findById(1L).get()));
-			salvoRepository.save(new Salvo(2L,List.of("C2","C4","D1"),gamePlayerRepository.findById(1L).get()));
+			salvoRepository.save(new Salvo(1L,List.of("B2","C1"),gamePlayerRepository.findById(1L).get()));
+			salvoRepository.save(new Salvo(2L,List.of("B6","B7","B8","B9"),gamePlayerRepository.findById(1L).get()));
+			salvoRepository.save(new Salvo(3L,List.of("B6","B7","B8","B9"),gamePlayerRepository.findById(1L).get()));
+			salvoRepository.save(new Salvo(4L,List.of("E10","F10","G10"),gamePlayerRepository.findById(1L).get()));
+			salvoRepository.save(new Salvo(5L,List.of("F2","F3","F4"),gamePlayerRepository.findById(1L).get()));
+			salvoRepository.save(new Salvo(6L,List.of("I4","I5","I6","I7","I8"),gamePlayerRepository.findById(1L).get()));
 
-			salvoRepository.save(new Salvo(1L,List.of("F1","G2","E6"),gamePlayerRepository.findById(2L).get()));
+			salvoRepository.save(new Salvo(1L,List.of("B2","C1"),gamePlayerRepository.findById(2L).get()));
+			salvoRepository.save(new Salvo(2L,List.of("B6","B7","B8","B9"),gamePlayerRepository.findById(2L).get()));
+			salvoRepository.save(new Salvo(3L,List.of("B6","B7","B8","B9"),gamePlayerRepository.findById(2L).get()));
+			salvoRepository.save(new Salvo(4L,List.of("E10","F10","G10"),gamePlayerRepository.findById(2L).get()));
+			salvoRepository.save(new Salvo(5L,List.of("F2","F3","F4"),gamePlayerRepository.findById(2L).get()));
+			salvoRepository.save(new Salvo(6L,List.of("I4","I5","I6","I7","I8"),gamePlayerRepository.findById(2L).get()));
+
+			/*salvoRepository.save(new Salvo(1L,List.of("F1","G2","E6"),gamePlayerRepository.findById(2L).get()));
 			salvoRepository.save(new Salvo(2L,List.of("A10","H4","C2"),gamePlayerRepository.findById(2L).get()));
 
 			salvoRepository.save(new Salvo(1L,List.of("D1","D2","C2","C7","A2"),gamePlayerRepository.findById(3L).get()));
-			salvoRepository.save(new Salvo(2L,List.of("E1","E2","E3","E4","E5"),gamePlayerRepository.findById(3L).get()));*/
+			salvoRepository.save(new Salvo(2L,List.of("E1","E2","E3","E4","E5"),gamePlayerRepository.findById(3L).get()));
 
 
 			//scoreRepository.save(gamePlayerRepository.findById(1L).get().getScore(1.0D));

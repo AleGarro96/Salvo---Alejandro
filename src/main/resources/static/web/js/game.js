@@ -100,7 +100,9 @@ function refreshGameView(_url) {
                 makeGameRecordTable(gamePlayerData.hits.self, "gameRecordSelfTable");
                 $('#battleGrids').show('puff', 'slow');
                 $('#gameRecordBlock').show('puff', 'slow');
+                playSound("sounds/won.mp3",0.35);
                 console.log("yes you won");
+                openMyModal("Won");
             }
             if (gamePlayerData.gameState === "TIE"){
                 showSelf(gamePlayerData);
@@ -109,16 +111,17 @@ function refreshGameView(_url) {
                 $('#battleGrids').show('puff', 'slow');
                 $('#gameRecordBlock').show('puff', 'slow');
                 console.log("TIED MATCH");
+                openMyModal("Tied");
             }
-            if (gamePlayerData.gameState === "LOST"){
+            if (gamePlayerData.gameState === "LOSE"){
                 showSelf(gamePlayerData);
                 makeGameRecordTable(gamePlayerData.hits.opponent, "gameRecordOppTable");
                 makeGameRecordTable(gamePlayerData.hits.self, "gameRecordSelfTable");
                 $('#battleGrids').show('puff', 'slow');
                 $('#gameRecordBlock').show('puff', 'slow');
-                 var msg = "PERDISTE FLACOOOOO";
-                        displayOverlay(msg);
-                console.log("OH YOU LOST");
+                playSound("sounds/lose.mp3",0.35);
+                openMyModal("Lose");
+                console.log(msg);
             }
             if (gamePlayerData.gameState === "WAIT"){
                 $('#battleGrids').show('puff', 'slow');
@@ -426,7 +429,8 @@ function makeGameRecordTable (hitsArray, gameRecordTableId) {
         let hitsReport = "";
         if (playTurn.damages.carrierHits > 0){
             hitsReport += "Carrier " + addDamagesIcons(playTurn.damages.carrierHits, "hit") + " ";
-            if (playTurn.damages.carrier === 5){
+            if (playTurn.damages.carrier === 5)
+            {
                 hitsReport += "SUNK! ";
                 $(playerTag + 'carrierIcon').html('<img src="img/carriersunk.png">');
                 shipsAfloat--;
@@ -505,7 +509,35 @@ function getTurn(gamePlayerData) {
     return turn;
 }
 
+function openMyModal(type)
+{
+    if(type == "Won")
+    {
+        $("#Won").modal('show');
+    }if(type == "Lose")
+    {
+        $("#Lose").modal('show');
+    }
+if(type == "Tied")
+    {
+        $("#Tied").modal('show');
+    }
+}
 
+function closeMyModal(){
+    $("#myModal").modal('hide');
+}
 
-
-
+function playSound(url,vol)
+{
+  var audio = document.createElement('audio');
+  audio.volume = vol;
+  audio.style.display = "none";
+  audio.src = url;
+  audio.autoplay = true;
+  audio.onended = function()
+  {
+    audio.remove() //Remove when played.
+  };
+  document.body.appendChild(audio);
+}

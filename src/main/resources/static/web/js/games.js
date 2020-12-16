@@ -27,7 +27,8 @@ $('.login-form').on('submit', function (event) {
 
                 updateJson();
                 $("#createGameForm").show();
-
+                playSound("sounds/login.mp3",0.5);
+                $("#login").delay(2000).hide( "slow" );
             })
             .fail(function() {
                 console.log("login failed");
@@ -100,6 +101,7 @@ $('#logout-form').on('submit', function (event) {
                 console.log("logout ok");
                 $('#logoutSuccess').show("slow").delay(2000).hide("slow");
                 updateJson();
+                playSound("sounds/logout.mp3",1);
             })
             .fail(function () {
                 console.log("logout fails");
@@ -330,4 +332,18 @@ function showScoreBoard(playersArray) {
 
 function closeMyModal(){
     $("#myModal").modal('hide');
+}
+
+function playSound(url,vol)
+{
+  var audio = document.createElement('audio');
+  audio.volume = vol;
+  audio.style.display = "none";
+  audio.src = url;
+  audio.autoplay = true;
+  audio.onended = function()
+  {
+    audio.remove() //Remove when played.
+  };
+  document.body.appendChild(audio);
 }
