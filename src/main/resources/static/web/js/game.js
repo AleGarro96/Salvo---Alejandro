@@ -121,7 +121,6 @@ function refreshGameView(_url) {
                 $('#gameRecordBlock').show('puff', 'slow');
                 playSound("sounds/lose.mp3",0.35);
                 openMyModal("Lose");
-                console.log(msg);
             }
             if (gamePlayerData.gameState === "WAIT"){
                 $('#battleGrids').show('puff', 'slow');
