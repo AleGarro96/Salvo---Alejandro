@@ -28,6 +28,7 @@ public class Game
     public Game()
     {
         this.gamePlayers = new HashSet<GamePlayer>();
+        this.date = LocalDateTime.now();
     }
     public Game(LocalDateTime date)
     {
