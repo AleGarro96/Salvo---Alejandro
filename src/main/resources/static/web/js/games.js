@@ -174,7 +174,7 @@ function updateView() {
             $('#currentPlayer').text(data.player.email);
             $('#login-form').hide("slow");
             $('#logout-form').show("slow");
-
+            $("#login").delay(2000).hide( "slow" );
         }
 }
 
