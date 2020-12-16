@@ -175,6 +175,7 @@ function updateView() {
             $('#login-form').hide("slow");
             $('#logout-form').show("slow");
             $("#login").delay(2000).hide( "slow" );
+            console("deberia desparecer");
         }
 }
 
