@@ -80,7 +80,7 @@ public class SalvoController
                         gamePlayer.addSalvo(salvo);
                         salvoRepository.save(salvo);
 
-                        return new ResponseEntity<>(Util.makeMap("addSalvos", "Salvos added"),HttpStatus.CREATED);
+                        return new ResponseEntity<>(Util.makeMap("addSalvoes", "Salvos added"),HttpStatus.CREATED);
                 }
             }
     }
