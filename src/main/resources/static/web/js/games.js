@@ -62,7 +62,7 @@ $('.login-form').on('submit', function (event) {
                          closeMyModal();
                         updateJson();
                         $("#createGameForm").show();
-
+                        $("#login").delay(2000).hide( "slow" );
                     })
                     .fail(function() {
                         console.log("login failed");
